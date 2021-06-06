@@ -117,7 +117,7 @@ class ProgressiveManager extends Manager {
     } else if (this.reports.length >= 101){
       this.title = 'Bestest Manager'
     }
-    return this.title;
+    // return this.title;
   }
   
   hire(employee){
@@ -166,8 +166,8 @@ class Machine {
 
   makeWidgets(num){
     this.widgets_made_count += num;
-    this.wear_and_tear_count = Math.floor(this.widgets_made_count / 50)
-    return this.wear_and_tear_count
+    this.wear_and_tear_count = Math.floor(this.widgets_made_count / 50);
+    return this.wear_and_tear_count;
   }
 
   fixMachine(){

@@ -159,14 +159,14 @@ var module = (function() {
   // outside our lexical scope
   return {
     // Code here.
-    // publicMethod:function (){
-    //   let private = privateMethod();
-    //   return private;
-    // }
+    publicMethod:function(){
+      let private = privateMethod();
+      return private;
+    }
   };
 })();
 
-
+module.publicMethod();
 
 ////////// PROBLEM 7 //////////
 
@@ -216,9 +216,15 @@ function secretNumber() {
 
 function timeOutCounter() {
   for (var i = 0; i <= 5; i++) {
-    setTimeout(function() {
-      console.log(i);
-    }, i * 1000);
+
+    function preserveRef(i){
+      setTimeout(function() {
+        console.log(i);
+      }, i * 1000);
+    }
+
+    preserveRef(i);
   }
 }
+
 timeOutCounter();
